@@ -1,95 +1,142 @@
-# 🩺 Heart Disease Prediction Project – Full Machine Learning Pipeline  
+🩺 Heart Disease Prediction – End-to-End Machine Learning Pipeline
+📌 Project Overview
 
----
+This project builds a complete machine learning pipeline to predict heart disease using patient health records.
+It covers data preprocessing, dimensionality reduction, feature selection, supervised & unsupervised learning, model evaluation, and deployment.
 
-## 📌 Project Description
-This project focuses on building a **comprehensive machine learning pipeline** to predict the presence of heart disease based on patient health records. It covers the **entire workflow**: from data preprocessing, dimensionality reduction, feature selection, supervised and unsupervised learning, model evaluation, optimization, to final deployment. The ultimate goal is to help identify patients at risk of heart disease through interpretable and efficient ML models.
+👉 The ultimate goal is to help identify patients at risk through accurate and interpretable ML models.
 
----
+📊 Dataset Information
 
-## 📊 Dataset Information
-- **Source**: [UCI Machine Learning Repository – Heart Disease Dataset](https://archive.ics.uci.edu/ml/datasets/heart+disease)  
-- **Rows**: 303  
-- **Columns**: 14 (13 features + 1 target)  
-- **Target Variable**: `num`
-- **Missing Values**: Present in some columns (`ca`, `thal`)  
-- **Not Included Columns**: Only the 13 main features were used.
+Source: UCI Heart Disease Dataset
 
----
+Rows: 303
 
-## 🛠️ Tools & Technologies
-- **Programming Language**: Python  
-- **Libraries**:  
-  - Data Handling: Pandas, NumPy  
-  - Visualization: Matplotlib, Seaborn, plotly  
-  - Machine Learning: Scikit-learn  
+Columns: 14 (13 features + 1 target)
 
----
+Target Variable: num (0 = no disease, 1 = disease)
 
-## 🔄 Workflow Steps
-1. **Data Preprocessing & Cleaning** – Handled missing values, encoded categorical variables, scaled numerical features, and performed EDA.  
-2. **Dimensionality Reduction (PCA)** – Reduced features while retaining most variance.  
-3. **Feature Selection** – Used RFE, Chi-Square, and feature importance to keep relevant predictors.  
-4. **Supervised Learning** – Trained Logistic Regression, Decision Tree, Random Forest, and SVM.  
-5. **Unsupervised Learning** – Applied K-Means and Hierarchical Clustering to detect patterns.  
-6. **Model Evaluation** – Measured Accuracy, Precision, Recall, F1-score, and AUC.  
-7. **Hyperparameter Tuning** – Applied GridSearchCV and RandomizedSearchCV for optimization.  
-8. **Model Export & Deployment** – Saved final model using pickle.
+Missing Values: Present in ca, thal
 
----
+Focus: Only the 13 main features were used
 
-## 📈 Models and Metrics
+🛠️ Tools & Technologies
 
-| Model                | Accuracy | Precision | Recall | F1-Score | AUC  |
-|-----------------------|----------|-----------|--------|----------|------|
-| Logistic Regression   | 0.90     | 0.87      | 0.93   | 0.90     | 0.96 |
-| Decision Tree         | 0.85     | 0.85      | 0.82   | 0.84     | 0.88 |
-| **Random Forest**     | **0.93** | **0.90**  | **0.96** | **0.93** | **0.96** |
-| SVM                   | 0.92     | 0.87      | 0.96   | 0.92     | 0.93 |
+Language: Python 🐍
 
----
+Libraries:
 
-## 🏆 Final Model – Random Forest Classifier
-- **Chosen Model**: Random Forest Classifier  
-- **Parameters**:  
-  - `n_estimators = 100`  
-  - `max_depth = 8`  
-  - `min_samples_split = 2`  
-  - `min_samples_leaf = 2`  
-  - `max_features = "log2"`  
-  - `bootstrap = False`  
-  - `random_state = 42`  
+Data: Pandas, NumPy
 
-**Performance (Test Set):**
-- Accuracy: **0.93**  
-- Precision: **0.90**  
-- Recall: **0.96**  
-- F1-score: **0.93**  
-- AUC: **0.96**
+Visualization: Matplotlib, Seaborn, Plotly
 
-**Confusion Matrix:**
-```
+ML: Scikit-learn
+
+🔄 Project Workflow
+1️⃣ Data Preprocessing & Cleaning
+
+Handled missing values (ca, thal)
+
+Encoded categorical features
+
+Standardized numerical variables
+
+Conducted Exploratory Data Analysis (EDA)
+
+2️⃣ Feature Engineering & Reduction
+
+PCA (Dimensionality Reduction) → retained maximum variance
+
+Feature Selection → RFE, Chi-Square, and feature importance
+
+3️⃣ Model Building
+
+Supervised Learning: Logistic Regression, Decision Tree, Random Forest, SVM
+
+Unsupervised Learning: K-Means & Hierarchical Clustering
+
+4️⃣ Model Evaluation
+
+Metrics: Accuracy, Precision, Recall, F1-score, AUC
+
+Visualization: ROC curves, Confusion Matrix
+
+5️⃣ Optimization & Deployment
+
+Hyperparameter tuning with GridSearchCV & RandomizedSearchCV
+
+Final model saved using Pickle for deployment
+
+📈 Model Performance
+Model	Accuracy	Precision	Recall	F1-Score	AUC
+Logistic Regression	0.90	0.87	0.93	0.90	0.96
+Decision Tree	0.85	0.85	0.82	0.84	0.88
+Random Forest	0.93	0.90	0.96	0.93	0.96
+SVM	0.92	0.87	0.96	0.92	0.93
+
+✅ Best Model: Random Forest Classifier
+
+🏆 Final Model – Random Forest
+
+Hyperparameters Used:
+
+n_estimators = 100
+
+max_depth = 8
+
+min_samples_split = 2
+
+min_samples_leaf = 2
+
+max_features = "log2"
+
+bootstrap = False
+
+random_state = 42
+
+Test Set Performance:
+
+Accuracy: 0.93
+
+Precision: 0.90
+
+Recall: 0.96
+
+F1-score: 0.93
+
+AUC: 0.96
+
+Confusion Matrix:
+
                  Predicted Negative   Predicted Positive
 Actual Negative        30                 3
 Actual Positive        1                 27
-```
 
----
+🚀 How to Run the Project
 
-## 🚀 How to Run the Project
+Clone the Repository
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/heart-disease-prediction.git
-   cd heart-disease-prediction
-   ```
+git clone https://github.com/your-username/heart-disease-prediction.git
+cd heart-disease-prediction
 
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
 
-3. **Run training and evaluation**
-   - Open Jupyter Notebook and click run all.
+Install Dependencies
 
----
+pip install -r requirements.txt
+
+
+Run Training & Evaluation
+
+Open the Jupyter Notebook
+
+Click Run All to execute the pipeline
+
+📌 Future Improvements
+
+Deploy with Streamlit or Flask for real-time prediction
+
+Collect larger datasets for improved generalization
+
+Apply deep learning models for advanced accuracy
+
+✨ This project demonstrates how machine learning can assist healthcare by detecting heart disease risk early and accurately.
